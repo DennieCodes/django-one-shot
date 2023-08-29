@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todos List</title>
+  </head>
+  <body>
+    <main>
+      <h1>My Lists</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number of items</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todo_list_object %}
+            <tr>
+              <td>{{ todo.name }}</td>
+              <td>{{ todo.items|length }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
