@@ -5,7 +5,12 @@
   </head>
   <body>
     <main>
+      <div>
       <h1>My Lists</h1>
+      <p>
+        <a href="{% url 'todo_list_create' %}">Create a new list</a>
+      </p>
+
       <table>
         <thead>
           <tr>
@@ -24,6 +29,7 @@
           {% endfor %}
         </tbody>
       </table>
+      </div>
     </main>
   </body>
 </html>
