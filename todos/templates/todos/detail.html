@@ -8,6 +8,7 @@
       <div>
         <h1>{{ todo_list_object.name }}</h1>
         <a href="{% url 'todo_list_update' todo_list_object.id %}">Update List</a>
+        <a href="{% url 'todo_list_delete' todo_list_object.id %}">Delete</a>
         <table>
           <thead>
             <tr>

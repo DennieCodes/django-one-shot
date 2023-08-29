@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todos List</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Are you sure?</h1>
+        <form method="POST">
+          {% csrf_token %}
+          <button>Delete</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
