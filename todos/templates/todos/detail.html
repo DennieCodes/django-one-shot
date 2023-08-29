@@ -5,25 +5,28 @@
   </head>
   <body>
     <main>
-      <h1>My Lists</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>Due date</th>
-            <th>Is completed</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for item in todo_list_object.items.all %}
+      <div>
+        <h1>{{ todo_list_object.name }}</h1>
+        <a href="{% url 'todo_list_update' todo_list_object.id %}">Update List</a>
+        <table>
+          <thead>
             <tr>
-              <td>{{ item.task }}</td>
-              <td>{{ item.due_date }}</td>
-              <td>{{ item.is_completed }}</td>
+              <th>Task</th>
+              <th>Due date</th>
+              <th>Is completed</th>
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {% for item in todo_list_object.items.all %}
+              <tr>
+                <td>{{ item.task }}</td>
+                <td>{{ item.due_date }}</td>
+                <td>{{ item.is_completed }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>
