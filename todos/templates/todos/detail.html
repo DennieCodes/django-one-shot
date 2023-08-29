@@ -9,17 +9,17 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Number of items</th>
+            <th>Task</th>
+            <th>Due date</th>
+            <th>Is completed</th>
           </tr>
         </thead>
         <tbody>
-          {% for todo in todo_list_object %}
+          {% for item in todo_list_object.items.all %}
             <tr>
-              <td>
-                <a href="{% url 'todo_list_detail' todo.id%}">{{ todo.name }}</a>
-              </td>
-              <td>{{ todo.items.all|length }}</td>
+              <td>{{ item.task }}</td>
+              <td>{{ item.due_date }}</td>
+              <td>{{ item.is_completed }}</td>
             </tr>
           {% endfor %}
         </tbody>
