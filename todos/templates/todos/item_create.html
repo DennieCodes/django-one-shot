@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todos List</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Create a new item</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button>Create</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
