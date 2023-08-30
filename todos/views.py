@@ -1,6 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from todos.models import TodoList
+from todos.models import TodoList, TodoItem
 from todos.forms import TodoListForm, TodoItemForm
+
+
+# TODO_ITEM_UPDATE
+def todo_item_update(request, id):
+    todo_item = get_object_or_404(TodoItem, id=id)
+
+    if request.method == "POST":
+        form = TodoItemForm(request.POST, instance=todo_item)
+        if form.is_valid():
+            form.save()
+            return redirect("todo_list_detail", id=todo_item.list.id)
+    else:
+        form = TodoItemForm(instance=todo_item)
+    context = {
+        "todo_item": todo_item,
+        "form": form,
+    }
+    return render(request, "todos/item_update.html", context)
 
 
 # TODO_ITEM_CREATE
