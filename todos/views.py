@@ -41,8 +41,9 @@ def todo_list_delete(request, id):
     if request.method == "POST":
         todo_list.delete()
         return redirect("todo_list_list")
+    context = {"delete_todo": todo_list}
 
-    return render(request, "todos/delete.html")
+    return render(request, "todos/delete.html", context)
 
 
 # TODO_LIST_UPDATE

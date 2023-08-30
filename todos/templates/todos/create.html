@@ -5,13 +5,14 @@
   </head>
   <body>
     <main>
-      <h1>Create Todo List</h1>
-      <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>Create</button>
-      </form>
-
+      <div>
+        <h1>Create Todo List</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button>Create</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
