@@ -11,7 +11,7 @@ def todo_item_update(request, id):
         form = TodoItemForm(request.POST, instance=todo_item)
         if form.is_valid():
             form.save()
-            return redirect("todo_list_detail", id=todo_item.list.id)
+            return redirect("todo_list_details", id=todo_item.list.id)
     else:
         form = TodoItemForm(instance=todo_item)
     context = {
